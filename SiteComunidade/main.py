@@ -18,6 +18,10 @@ def contato():
 def usuarios():
     return render_template('usuarios.html', lista_usuario=lista_usuario)
 
+@app.route("/login&contato")
+def login():
+    return render_template('login.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 

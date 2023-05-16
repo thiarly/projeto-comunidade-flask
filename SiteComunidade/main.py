@@ -1,11 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
 lista_usuario = ['Thiarly', 'Luca', 'Laila', 'Clara']
 
 @app.route("/")
-def hello_world():
+def home():
     return render_template('home.html')
 
 
@@ -15,7 +15,7 @@ def contato():
 
 
 @app.route("/usuarios")
-def usuario():
+def usuarios():
     return render_template('usuarios.html', lista_usuario=lista_usuario)
 
 if __name__ == '__main__':

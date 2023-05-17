@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for
+from forms import FormLogin, FormCriarConta
 
 app = Flask(__name__)
 
@@ -10,11 +11,9 @@ app.config['SECRET_KEY'] = '6e9142134c8c3b306eef0ce3c1d5d585'
 def home():
     return render_template('home.html')
 
-
 @app.route("/contato")
 def contato():
     return render_template('contato.html')
-
 
 @app.route("/usuarios")
 def usuarios():
@@ -22,8 +21,9 @@ def usuarios():
 
 @app.route("/login&contato")
 def login():
-    return render_template('login.html')
+    form_login = FormLogin()  # Instância do formulário FormLogin
+    form_criarconta = FormCriarConta()  # Instância do formulário FormCriarConta
+    return render_template('login.html', form_login=form_login, form_criarconta=form_criarconta)
 
 if __name__ == '__main__':
     app.run(debug=True)
-

@@ -1,4 +1,4 @@
-#!/Users/thiarly/Desktop/MyProjects/Projeto-Site-Flask/SiteComunidade/venv/bin/python3.11
+#!/Users/thiarly/Desktop/MyProjects/Projeto-Site-Flask/SiteComunidade/venv/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys

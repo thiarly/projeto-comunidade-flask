@@ -3,6 +3,7 @@ from forms import FormLogin, FormCriarConta
 
 app = Flask(__name__)
 
+
 lista_usuario = ['Thiarly', 'Luca', 'Laila', 'Clara']
 
 app.config['SECRET_KEY'] = '6e9142134c8c3b306eef0ce3c1d5d585'

@@ -24,6 +24,11 @@ def usuarios():
 def login():
     form_login = FormLogin()  # Instância do formulário FormLogin
     form_criarconta = FormCriarConta()  # Instância do formulário FormCriarConta
+    # criar função if para verificar o botao login
+
+    # criar função if para verificar o botão criarconta
+
+    
     return render_template('login.html', form_login=form_login, form_criarconta=form_criarconta)
 
 if __name__ == '__main__':

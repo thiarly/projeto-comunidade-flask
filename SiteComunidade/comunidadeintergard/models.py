@@ -1,6 +1,5 @@
-from main import database
+from comunidadeintergard import database
 from datetime import datetime
-
 
 
 class Usuario(database.Model):
@@ -12,7 +11,6 @@ class Usuario(database.Model):
     cursos = database.Column(database.String, nullable=False, default='Não Informado')
     posts = database.relationship('Post', backref='autor', lazy=True)
    
-
 
 class Post(database.Model):
     id = database.Column(database.Integer, primary_key=True)

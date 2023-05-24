@@ -1,7 +1,7 @@
 from flask import render_template, url_for, request, flash, redirect
 from comunidadeintergard.forms import FormCriarConta, FormLogin
 from comunidadeintergard.models import Post, Usuario
-from comunidadeintergard import app, database
+from comunidadeintergard import app, database, bcrypt
 
 
 lista_usuario = ['Thiarly', 'Luca', 'Laila', 'Clara']
@@ -26,9 +26,10 @@ def login():
 
         flash(f'Login feito com sucesso no e-mail: {form_login.email.data}', 'alert-success')
         return redirect(url_for('home'))
-        
+    
     if form_criarconta.validate_on_submit() and 'botao_submit_criarconta' in request.form:
-         usuario = Usuario(username=form_criarconta.username.data, email=form_criarconta.email.data, senha=form_criarconta.senha.data)
+         senha_crypt = bcrypt.generate_password_hash(form_criarconta.senha.data)
+         usuario = Usuario(username=form_criarconta.username.data, email=form_criarconta.email.data, senha=senha_crypt)
          database.session.add(usuario)
          database.session.commit()
         

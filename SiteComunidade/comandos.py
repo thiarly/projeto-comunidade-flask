@@ -5,8 +5,6 @@
 # with app.app_context():
 #      database.create_all()
 
-
-
 # with app.app_context():
 #     usuario_thiarly = Usuario(username='thiarly', email='thiarly.cavalcante@live.com', senha='123456')
 # #     usuario_luca = Usuario(username='luca', email='luca.cavalcante@live.com', senha='123456')

@@ -1,14 +1,17 @@
-from main import app, database
-from instance.comunidadeintergard.models import Usuario, Post
+# from comunidadeintergard import database
+# from comunidadeintergard import app
+# from comunidadeintergard.models import Usuario, Post
 
 # with app.app_context():
-#     database.create_all()
+#      database.create_all()
+
+
 
 # with app.app_context():
 #     usuario_thiarly = Usuario(username='thiarly', email='thiarly.cavalcante@live.com', senha='123456')
-#     usuario_luca = Usuario(username='luca', email='luca.cavalcante@live.com', senha='123456')
+# #     usuario_luca = Usuario(username='luca', email='luca.cavalcante@live.com', senha='123456')
 #     database.session.add(usuario_thiarly)
-#     database.session.add(usuario_luca)
+# #     database.session.add(usuario_luca)
 #     database.session.commit()
 
 # with app.app_context():

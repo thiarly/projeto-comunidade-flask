@@ -19,6 +19,7 @@ class FormCriarConta(FlaskForm):
         check_username = Usuario.query.filter_by(username=username.data).first()
         if check_username:
             raise ValidationError('Usuário já cadastrado. Cadastra-se com outro usuário.')
+        
 class FormLogin(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     senha = PasswordField('Senha', validators=[DataRequired(), Length(min=6, max=20)])

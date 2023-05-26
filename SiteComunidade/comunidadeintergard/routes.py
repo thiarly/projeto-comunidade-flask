@@ -28,7 +28,11 @@ def login():
         if usuario and bcrypt.check_password_hash(usuario.senha, form_login.senha.data):
             login_user(usuario, remember=form_login.lembrar_dados.data)
             flash(f'Login feito com sucesso no e-mail: {form_login.email.data}', 'alert-success')
-            return redirect(url_for('home'))
+            par_next = request.args.get('next')
+            if par_next:
+                return redirect(par_next)
+            else:
+                return redirect(url_for('contato'))
         else: 
             flash('Falha no login, E-mail ou Senha incorretos', 'alert-danger')
     
@@ -59,6 +63,8 @@ def perfil():
 @login_required
 def criar_post():
     return render_template('criarpost.html')
+
+
 
 
 

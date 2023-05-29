@@ -1,7 +1,9 @@
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from comunidadeintergard.models import Usuario
+from flask_login import current_user
 
 class FormCriarConta(FlaskForm):
     username = StringField('Nome de Usuário', validators=[DataRequired()])
@@ -25,3 +27,22 @@ class FormLogin(FlaskForm):
     senha = PasswordField('Senha', validators=[DataRequired(), Length(min=6, max=20)])
     lembrar_dados = BooleanField('Lembrar')
     botao_submit_login = SubmitField('Fazer Login')
+    
+    
+class FormEditarPerfil(FlaskForm):
+    username = StringField('Nome de Usuário', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    foto_perfil = FileField('Foto de Perfil', validators=[FileAllowed(['jpg', 'png'])])
+    botao_submit_editarperfil = SubmitField('Confirmar Alterações')
+  
+    def validate_email(self, email):
+        if current_user.email != email.data:
+            check_email = Usuario.query.filter_by(email=email.data).first()
+            if check_email:
+                raise ValidationError('Já existe um usuário com esse e-mail. Cadastre-se com outro e-mail.')
+            
+    def validate_username(self, username):
+        if current_user.username != username.data:
+            check_username = Usuario.query.filter_by(username=username.data).first()
+            if check_username:
+                    raise ValidationError('Já exitse um usuário com esse nome. Cadastre-se com outro nome.')

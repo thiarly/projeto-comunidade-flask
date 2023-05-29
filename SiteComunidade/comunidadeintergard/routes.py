@@ -73,7 +73,7 @@ def salvar_imagem(imagem):
     nome, extensao = os.path.splitext(imagem.filename)
     nome_arquivo = nome + codigo + extensao
     caminho_completo = os.path.join(app.root_path, 'static/fotos_perfil', nome_arquivo)
-    tamanho = (200, 200)
+    tamanho = (600, 600)
     imagem_reduzida = Image.open(imagem)
     imagem_reduzida.thumbnail(tamanho)
     imagem_reduzida.save(caminho_completo)

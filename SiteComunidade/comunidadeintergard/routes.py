@@ -108,7 +108,7 @@ def editar_perfil():
         form.email.data = current_user.email
         form.username.data = current_user.username
     
-    foto_perfil = url_for('static', filename='fotos_perfil/{}'.format(current_user.foto_perfil))
+    foto_perfil = url_for('static', filename='fotos_perfil/{}'.format(str(current_user.foto_perfil)))
     return render_template('editarperfil.html', foto_perfil=foto_perfil, form=form)
 
 

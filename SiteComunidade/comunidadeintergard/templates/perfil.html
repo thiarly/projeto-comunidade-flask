@@ -18,8 +18,15 @@
 
                     <div class="d-flex flex-column">
 
-                        <span class="articles">Cursos</span>
-                        <span class="number1">0</span>
+                        {% if 'Não Informado' in current_user.cursos %}
+                            <span class="articles">Cursos</span>
+                            <span class="number1">0</span>
+                        
+                        {% else %}
+                            <span class="articles">Cursos</span>
+                            <span class="number1">{{current_user.cursos.count(';') + 1}}</span>
+
+                        {% endif%}
                         
                     </div>
 
@@ -44,6 +51,15 @@
             </div>
              
          </div>
+<div class="row justify-content-center">
+    <div class="col col-4" style="text-align: center">
+        <strong>Cursos</strong><br>
+        {% for curso in current_user.cursos.split(';')%}
+            <button type="button" class="btn btn-info mt-2" disabled>Curso de Python</button>
+        {% endfor %}
+    </div>
+
+</div>
 
     {% block form_editar_perfil %}
     

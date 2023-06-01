@@ -1,5 +1,5 @@
 from flask import render_template, url_for, request, flash, redirect
-from comunidadeintergard.forms import FormCriarConta, FormLogin, FormEditarPerfil, FormCriarPost
+from comunidadeintergard.forms import FormCriarConta, FormLogin, FormEditarPerfil, FormCriarPost, FormEditarPost
 from comunidadeintergard.models import Post, Usuario
 from comunidadeintergard import app, database, bcrypt
 from flask_login import login_user, logout_user, current_user, login_required
@@ -120,10 +120,27 @@ def editar_perfil():
     foto_perfil = url_for('static', filename='fotos_perfil/{}'.format(str(current_user.foto_perfil)))
     return render_template('editarperfil.html', foto_perfil=foto_perfil, form=form)
 
-@app.route('/post/<int:post_id>')
+@app.route('/post/<int:post_id>', methods=["GET", "POST"])
+@login_required
 def exibir_post(post_id):
     post = Post.query.get_or_404(post_id)
-    return render_template('post.html', post=post)
+    if current_user == post.autor:
+        form = FormEditarPost()
+        #Lógica para editar o post
+        if request.method == 'GET':
+            form.titulo.data = post.titulo
+            form.corpo.data = post.corpo
+        #Lógica para editar o posto
+        elif form.validate_on_submit():
+            post.titulo = form.titulo.data
+            post.corpo = form.corpo.data
+            database.session.commit()
+            flash('Post atualizado com sucesso', 'alert-success')
+            return redirect(url_for('exibir_post', post_id=post.id))
+    else:
+        form = None
+        
+    return render_template('post.html', post=post, form=form)
 
 
    

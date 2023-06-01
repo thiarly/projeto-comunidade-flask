@@ -120,7 +120,10 @@ def editar_perfil():
     foto_perfil = url_for('static', filename='fotos_perfil/{}'.format(str(current_user.foto_perfil)))
     return render_template('editarperfil.html', foto_perfil=foto_perfil, form=form)
 
-
+@app.route('/post/<int:post_id>')
+def exibir_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('post.html', post=post)
 
 
    

@@ -41,5 +41,10 @@
 
 .meupost{
   background: #f2f5f8 !important;
-  
+
+}
+
+.sublinhado{
+  text-decoration: none;
+  color: #000;
 }

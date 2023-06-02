@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "ação",
         "adicionar",
         "Alterações",
         "arquivo",
@@ -13,6 +14,7 @@
         "Cadastre",
         "Cadastro",
         "caminho",
+        "Cancelar",
         "categoria",
         "codigo",
         "completo",
@@ -36,9 +38,14 @@
         "curso",
         "Curso",
         "Cursos",
+        "desfeita",
         "Editar",
         "empresa",
         "erro",
+        "Essa",
+        "excluir",
+        "Excluir",
+        "Exclusão",
         "exibir",
         "existe",
         "exitse",
@@ -67,6 +74,9 @@
         "nullable",
         "outro",
         "perfil",
+        "pode",
+        "quer",
+        "realmente",
         "reduzida",
         "sair",
         "salvar",
@@ -84,6 +94,7 @@
         "usuário",
         "Usuário",
         "usuarios",
+        "Você",
         "wtforms"
     ],
     "[python]": {

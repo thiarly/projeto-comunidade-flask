@@ -1,4 +1,4 @@
-from flask import render_template, url_for, request, flash, redirect
+from flask import render_template, url_for, request, flash, redirect, abort
 from comunidadeintergard.forms import FormCriarConta, FormLogin, FormEditarPerfil, FormCriarPost, FormEditarPost
 from comunidadeintergard.models import Post, Usuario
 from comunidadeintergard import app, database, bcrypt
@@ -143,4 +143,15 @@ def exibir_post(post_id):
     return render_template('post.html', post=post, form=form)
 
 
-   
+@app.route('/post/<int:post_id>/excluir', methods=["GET", "POST"])
+@login_required
+def excluir_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if current_user == post.autor:
+        database.session.delete(post)
+        database.session.commit()
+        flash('Post excluído com sucesso', 'alert-danger')
+        return redirect(url_for('home'))
+    else:
+        abort(403)
+        

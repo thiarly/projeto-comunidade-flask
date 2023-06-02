@@ -35,4 +35,7 @@ __pycache__/
 .env.*
 
 # Outros arquivos e diretórios específicos do seu projeto
+instance/
+.vscode/
+
 

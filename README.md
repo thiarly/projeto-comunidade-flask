@@ -51,3 +51,14 @@ SQLAlchemy==2.0.15
 typing_extensions==4.6.2
 Werkzeug==2.3.4
 WTForms==3.0.1
+
+Mais detalhes sobre a instalação e configuração serão adicionados em breve.
+
+## Uso
+Instruções de uso serão adicionadas em breve.
+
+## Contribuição
+Detalhes sobre como contribuir para este projeto serão adicionados em breve.
+
+## Licença
+Este projeto está licenciado sob a licença MIT.

@@ -17,4 +17,16 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'alert-info'
+
+# from comunidadeintergard import models
+# engine = SQLAlchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+# inspector = SQLAlchemy.inspect(engine)
+# if not inspector.has_table('usuario'):
+#     with app.app_context():
+#         database.drop_all()
+#         database.create_all()
+#         print('Base de Dados criada com sucesso!')
+# else:
+#     print('Base de Dados já existe!')
+
 from comunidadeintergard import routes

@@ -1,0 +1,38 @@
+# Arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+venv/
+env/
+
+# Byte-compiled / optimized files
+*.pyc
+*.pyo
+__pycache__/
+
+# Arquivos de registro e saída
+*.log
+*.txt
+
+# Arquivos de banco de dados
+*.db
+*.sqlite3
+
+# Diretório de saída padrão do Python
+__pycache__/
+
+# Arquivos de configuração de IDEs
+.idea/
+.vscode/
+
+# Dependências instaladas
+/venv/
+/pip-*.log
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Outros arquivos e diretórios específicos do seu projeto
+

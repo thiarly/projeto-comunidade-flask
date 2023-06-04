@@ -39,3 +39,4 @@ instance/
 .vscode/
 
 
+.DS_Store

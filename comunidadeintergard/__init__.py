@@ -18,6 +18,8 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'alert-info'
 
+from comunidadeintergard import routes
+
 # from comunidadeintergard import models
 # engine = SQLAlchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 # inspector = SQLAlchemy.inspect(engine)
@@ -29,4 +31,3 @@ login_manager.login_message_category = 'alert-info'
 # else:
 #     print('Base de Dados já existe!')
 
-from comunidadeintergard import routes

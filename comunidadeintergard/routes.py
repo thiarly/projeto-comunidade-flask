@@ -91,10 +91,10 @@ def salvar_imagem(imagem):
 def atualizar_curso(form):
     lista_cursos = []
     for campo in form:
-        if 'curso' in campo.name:
+        if 'curso_' in campo.name:
             if campo.data:
                 lista_cursos.append(campo.label.text)
-    return ';' .join(lista_cursos)
+    return ';'.join(lista_cursos)
 
 
 @app.route('/editar/perfil', methods=["GET", "POST"])
@@ -108,16 +108,20 @@ def editar_perfil():
             nome_imagem = salvar_imagem(form.foto_perfil.data)
             current_user.foto_perfil = nome_imagem
         current_user.cursos = atualizar_curso(form)
-            
         database.session.commit()
         flash('Perfil atualizado com sucesso', 'alert-success')
         return redirect(url_for('perfil'))
-    
     elif request.method == 'GET':
         form.email.data = current_user.email
-        form.username.data = current_user.username
-    
-    foto_perfil = url_for('static', filename='fotos_perfil/{}'.format(str(current_user.foto_perfil)))
+        form.username.data = current_user.username 
+        
+        cursos_atuais = current_user.cursos.split(';') # assumindo que os cursos são armazenados como uma string separada por ';'
+        for campo in form:
+            if 'curso_' in campo.name:
+                if campo.label.text in cursos_atuais:
+                    campo.data = True
+        
+    foto_perfil = url_for('static', filename='fotos_perfil/{}'.format(current_user.foto_perfil))
     return render_template('editarperfil.html', foto_perfil=foto_perfil, form=form)
 
 @app.route('/post/<int:post_id>', methods=["GET", "POST"])

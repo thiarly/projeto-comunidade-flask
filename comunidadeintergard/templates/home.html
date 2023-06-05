@@ -4,27 +4,26 @@
 
 <div class="container mt-3">
       <h1 style="color:crimson">Comunidade Intergard do Brasil</h1>
-      <h2>Comunidade para os funcionários da empresa</h2>
+      <h4>Comunidade para os funcionários da empresa</h4>
       <hr>
       {% for post in posts%}
       <div class="row border mt-4 p-3 meupost">
             <div class="col-12 col-md-3">
                   <div class="image pe-2">
                         <img src="{{ url_for('static', filename='fotos_perfil/{}'.format(post.autor.foto_perfil))}}" class="rounded" style="max-width: 100%;" >
-                  <div>
-                       <strong>{{post.autor.username}}</strong>
-
+                  <div class="text-center">
+                       <strong class="username">{{post.autor.username}}</strong>
+                  </div>
                   <div class="row justify-content-center">
                         {% for curso in post.autor.cursos.split(';')%}
-                              <button type="button" class="btn btn-success mt-2" disabled>{{curso}}</button>
+                              <button type="button" class="btn btn-dark mt-2 course-name" disabled>{{curso}}</button>
                         {% endfor %}
-                  </div>
                   </div>
                   </div>
             </div>
             <div class="col-12 col-md-9" style="word-wrap: break-word;">
-                  <a style="text-decoration: none;" href="{{ url_for ('exibir_post', post_id=post.id)}}"><h3>{{post.titulo}}</h3></a>
-                  {{post.corpo}}
+                  <a style="text-decoration: none;" href="{{ url_for ('exibir_post', post_id=post.id)}}"><h3><span>{{post.titulo}}</span></h3></a>
+                  <p>{{post.corpo}}</p>
             </div>
       </div>
       {% endfor %}

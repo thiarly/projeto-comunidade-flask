@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #9C6ADE;
+  --secondary-color: #4F46E5;
+  --background-color: #1F2937;
+  --text-color: #E5E7EB;
+  --hover-color: #6B7280;
+}
+
+
 .card{
   width: 400px;
   border: none;
@@ -51,4 +60,58 @@
 
 .col-12 .col-md-9 {
   word-wrap: break-word;
+}
+
+
+a {
+  color: var(--primary-color);
+}
+
+span {
+  color: blue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color); 
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.container p {
+  color: black;
+  font-family: Tahoma;
+}
+
+h1 {
+  font-family: Tahoma;
+}
+
+h4 {
+  color: black;
+  font-family: Tahoma;
+}
+
+.username {
+  color: #333; /* Altere para qualquer cor que deseja */
+}
+
+.course-name {
+  color: #333; /* Altere para qualquer cor que deseja */
+}
+
+.titulo-post {
+  color: var(--primary-color);
+}
+
+.post-title {
+  color: #333
 }

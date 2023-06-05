@@ -55,7 +55,7 @@
     <div class="col-12 col-md-4" style="text-align: center">
         <strong>Cursos</strong><br>
         {% for curso in current_user.cursos.split(';')%}
-            <button type="button" class="btn btn-success mt-2" disabled>{{ curso }}</button>
+        <button type="button" class="btn btn-dark mt-2" disabled>{{ curso }}</button>
         {% endfor %}
     </div>
 

@@ -2,9 +2,9 @@
 
 {% block body %}
 <div class="container">
-    <h1> Faça seu login ou crie sua conta para continuar</h1>
+    <h1 class="text-center"> Faça seu login ou crie sua conta para continuar</h1>
     <hr>
-    <div class="row">
+    <div class="row flex-column flex-md-row">
         <div class="col">
             <form method="POST" action="" class="border p-4 mt-2">
                 {{ form_login.csrf_token }}
@@ -51,7 +51,7 @@
             </form>
 
         </div>
-        <div class="col">
+        <div class="col-md-6">
             <form method="POST" action="" class="border p-4 mt-2">
                 {{ form_criarconta.csrf_token }}
                 <fieldset>

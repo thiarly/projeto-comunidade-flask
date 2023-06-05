@@ -22,12 +22,12 @@
                   </div>
                   </div>
             </div>
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-md-9" style="word-wrap: break-word;">
                   <a style="text-decoration: none;" href="{{ url_for ('exibir_post', post_id=post.id)}}"><h3>{{post.titulo}}</h3></a>
-                  <p>{{post.corpo}}</p>
+                  {{post.corpo}}
             </div>
       </div>
       {% endfor %}
 </div>
 
-{% endblock %}
+{% endblock %} 

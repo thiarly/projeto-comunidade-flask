@@ -21,13 +21,19 @@
             </div>
             <div class="col col-9">
                 <h3>{{post.titulo}}
-                <small class="text-muted" style="font-size: 15px"> Data de Criação: {{post.data_criacao.strftime('%d/%m/%Y')}} 
-                {% if form %}
-                    - <a href="#form_editarpost" class="text-decoration-none" >Editar Post</a>  / 
-                    <a href="#" class="text-decoration-none text-danger" data-bs-toggle="modal" data-bs-target="#ExcluirPost">Excluir Post</a>
-                {% endif %}
-                </small>
+                    <small class="text-muted" style="font-size: 15px"> Data de Criação: {{post.data_criacao.strftime('%d/%m/%Y')}} </small>
+                    {% if form %}
+                        <div class="mt-2">
+                            <a href="#form_editarpost" class="btn btn-outline-primary btn-sm"> 
+                                <i class="fas fa-edit"></i> Editar Post
+                            </a>
+                            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#ExcluirPost">
+                                <i class="fas fa-trash"></i> Excluir Post
+                            </button>
+                        </div>
+                    {% endif %}
                 </h3>
+                    
                 <p>{{post.corpo}}</p>
             </div>
       </div>

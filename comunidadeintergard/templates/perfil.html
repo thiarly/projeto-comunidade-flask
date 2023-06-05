@@ -6,7 +6,7 @@
                 <div class="d-flex align-items-center">
 
                     <div class="image pe-2">
-                        <img src="{{ foto_perfil }}" class="rounded" width="200" >
+                        <img src="{{ foto_perfil }}" class="rounded" style="max-width: 100%;">
                     </div>
 
                 <div class="ml-3 w-100">
@@ -52,7 +52,7 @@
              
          </div>
 <div class="row justify-content-center">
-    <div class="col col-4" style="text-align: center">
+    <div class="col-12 col-md-4" style="text-align: center">
         <strong>Cursos</strong><br>
         {% for curso in current_user.cursos.split(';')%}
             <button type="button" class="btn btn-success mt-2" disabled>{{ curso }}</button>

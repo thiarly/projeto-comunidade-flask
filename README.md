@@ -1,5 +1,9 @@
 # Projeto Comunidade Flask
 
+
+<img width="1374" alt="Screenshot 2023-09-21 at 10 13 52" src="https://github.com/thiarly/projeto-comunidade-flask/assets/13594903/144e400e-0c4d-4ba5-9f3f-2e5317ed51f1">
+
+
 Você pode acessar o projeto pelo link: [Projeto Comunidade Flask](https://projetocomunidadeflask-production.up.railway.app).
 
 ## Descrição
